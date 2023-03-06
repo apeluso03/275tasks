@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 
@@ -248,7 +249,26 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const spliceFunction = (question: Question) => {
+        const newArray = [...question.options];
+        newArray.splice(targetOptionIndex, 1, newOption);
+        return newArray;
+    };
+    if (targetOptionIndex === -1) {
+        return questions.map(
+            (question: Question): Question =>
+                question.id === targetId
+                    ? { ...question, options: [...question.options, newOption] }
+                    : { ...question }
+        );
+    } else {
+        return questions.map(
+            (question: Question): Question =>
+                question.id === targetId
+                    ? { ...question, options: spliceFunction(question) }
+                    : { ...question }
+        );
+    }
 }
 
 /***
