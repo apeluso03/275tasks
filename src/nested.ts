@@ -128,8 +128,12 @@ export function makeAnswers(questions: Question[]): Answer[] {
  * each question is now published, regardless of its previous published status.
  */
 export function publishAll(questions: Question[]): Question[] {
-    const published = [...questions, (questions.published = true)];
-    return published;
+    return questions.map(
+        (question: Question): Question =>
+            question.published === false
+                ? { ...question, published: true }
+                : { ...question }
+    );
 }
 
 /***
@@ -177,7 +181,12 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    return questions.map(
+        (question: Question): Question =>
+            question.id === targetId
+                ? { ...question, name: newName }
+                : { ...question }
+    );
 }
 
 /***
@@ -192,7 +201,21 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    if (newQuestionType != "multiple_choice_question") {
+        return questions.map(
+            (question: Question): Question =>
+                question.id === targetId
+                    ? { ...question, type: newQuestionType, options: [] }
+                    : { ...question }
+        );
+    } else {
+        return questions.map(
+            (question: Question): Question =>
+                question.id === targetId
+                    ? { ...question, type: newQuestionType }
+                    : { ...question }
+        );
+    }
 }
 
 /**
