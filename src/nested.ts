@@ -1,6 +1,6 @@
-/* eslint-disable prettier/prettier */
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
+import { duplicateQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -133,7 +133,12 @@ export function toCSV(questions: Question[]): string {
  */
 export function makeAnswers(questions: Question[]): Answer[] {
     const answers = questions.map((question: Question): Answer => {
-        question.id, "", false, false;
+        return {
+            questionId: question.id,
+            text: "",
+            submitted: false,
+            correct: false
+        };
     });
     return answers;
 }
@@ -282,5 +287,9 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number
 ): Question[] {
-    return [];
+    return questions.splice(
+        targetId,
+        0,
+        duplicateQuestion(newId, questions[targetId])
+    );
 }
