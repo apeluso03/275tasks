@@ -17,7 +17,7 @@ function App(): JSX.Element {
                 <header className="App-header">
                     Alex Peluso: UD CISC275 with React Hooks and TypeScript
                 </header>
-                <h1>Header</h1>
+                <h1>My Website!</h1>
                 <p>Hello World! Testing HTML</p>
                 <img src={photo} alt="UD Logo" />
                 <ul>
@@ -57,19 +57,25 @@ function App(): JSX.Element {
                         </Row>
                     </Container>
                 </div>
+                <div
+                    style={{
+                        backgroundColor: "black",
+                        color: "white"
+                    }}
+                ></div>
+                <hr></hr>
+                <Counter></Counter>
+                <hr />
+                <RevealAnswer></RevealAnswer>
+                <hr />
+                <StartAttempt></StartAttempt>
+                <hr />
+                <TwoDice></TwoDice>
+                <hr />
+                <ChangeType></ChangeType>
+                <hr />
+                <CycleHoliday></CycleHoliday>
             </div>
-            <hr></hr>
-            <Counter></Counter>
-            <hr />
-            <RevealAnswer></RevealAnswer>
-            <hr />
-            <StartAttempt></StartAttempt>
-            <hr />
-            <TwoDice></TwoDice>
-            <hr />
-            <ChangeType></ChangeType>
-            <hr />
-            <CycleHoliday></CycleHoliday>
         </>
     );
 }
