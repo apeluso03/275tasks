@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-type Holidays = "💪" | "👏" | "✅" | "🚀" | "⚔️";
+type Holidays = "🎃" | "🍀" | "❤️" | "🎅" | "🦃";
 
 const getHolidayAlphabetically: Record<Holidays, Holidays> = {
-    "💪": "👏",
-    "👏": "✅",
-    "✅": "🚀",
-    "🚀": "⚔️",
-    "⚔️": "💪"
+    "🎅": "🎃",
+    "🎃": "🍀",
+    "🍀": "🦃",
+    "🦃": "❤️",
+    "❤️": "🎅"
 };
 
 const getHolidayByDate: Record<Holidays, Holidays> = {
-    "🚀": "✅",
-    "✅": "👏",
-    "👏": "💪",
-    "💪": "⚔️",
-    "⚔️": "🚀"
+    "❤️": "🍀",
+    "🍀": "🎃",
+    "🎃": "🦃",
+    "🦃": "🎅",
+    "🎅": "❤️"
 };
 export function CycleHoliday(): JSX.Element {
-    const [Holiday, setHoliday] = useState<Holidays>("💪");
+    const [Holiday, setHoliday] = useState<Holidays>("🎃");
 
     function get_HolidayAlphabetically(): void {
         const nextHoliday = getHolidayAlphabetically[Holiday];
