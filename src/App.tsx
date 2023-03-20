@@ -20,11 +20,17 @@ function App(): JSX.Element {
                 <h1>My Website!</h1>
                 <p>Hello World! Testing HTML</p>
                 <img src={photo} alt="UD Logo" />
-                <ul>
-                    <li>Hello</li>
-                    <li>My Name Is Alex Peluso</li>
-                    <li>I Am A Student At UD</li>
-                </ul>
+                <div
+                    style={{
+                        textAlign: "left"
+                    }}
+                >
+                    <ul>
+                        <li>Hello</li>
+                        <li>My Name Is Alex Peluso</li>
+                        <li>I Am A Student At UD</li>
+                    </ul>
+                </div>
                 <div>
                     <Button onClick={() => console.log("Hello World!")}>
                         Log Hello World
