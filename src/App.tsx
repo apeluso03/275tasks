@@ -7,6 +7,10 @@ import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
+import { ChooseTeam } from "./bad-components/ChooseTeam";
+import { ColoredBox } from "./bad-components/ColoredBox";
+import { DoubleHalf } from "./bad-components/DoubleHalf";
+import { ShoveBox } from "./bad-components/ShoveBox";
 import photo from "./site.png";
 import { Button, Col, Container, Row } from "react-bootstrap";
 
@@ -81,6 +85,14 @@ function App(): JSX.Element {
                 <ChangeType></ChangeType>
                 <hr />
                 <CycleHoliday></CycleHoliday>
+                <hr />
+                <ChooseTeam></ChooseTeam>
+                <hr />
+                <ColoredBox></ColoredBox>
+                <hr />
+                <DoubleHalf></DoubleHalf>
+                <hr />
+                <ShoveBox></ShoveBox>
             </div>
         </>
     );
