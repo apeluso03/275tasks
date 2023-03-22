@@ -13,6 +13,11 @@ import { DoubleHalf } from "./bad-components/DoubleHalf";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import photo from "./site.png";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import { ChangeColor } from "./form-components/ChangeColor";
+import { CheckAnswer } from "./form-components/CheckAnswer";
+import { GiveAttempts } from "./form-components/GiveAttempts";
+import { EditMode } from "./form-components/EditMode";
+import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
 
 function App(): JSX.Element {
     return (
@@ -93,6 +98,19 @@ function App(): JSX.Element {
                 <DoubleHalf></DoubleHalf>
                 <hr />
                 <ShoveBox></ShoveBox>
+                <hr />
+                <ChangeColor></ChangeColor>
+                <hr />
+                <CheckAnswer expectedAnswer={"Alex"}></CheckAnswer>
+                <hr />
+                <GiveAttempts></GiveAttempts>
+                <hr />
+                <EditMode></EditMode>
+                <hr />
+                <MultipleChoiceQuestion
+                    options={["1", "2", "3", "4"]}
+                    expectedAnswer={"3"}
+                ></MultipleChoiceQuestion>
             </div>
         </>
     );

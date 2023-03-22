@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 
-const PEOPLE = [
-    "Alan Turing",
-    "Grace Hopper",
-    "Ada Lovelace",
-    "Charles Babbage",
-    "Barbara Liskov",
-    "Margaret Hamilton"
-];
+const PEOPLE = ["Brimstone", "Jett", "Sage", "Omen", "Sova", "Viper"];
 
 export function ChooseTeam(): JSX.Element {
     const [team, setTeam] = useState<string[]>([]);
